@@ -15,7 +15,7 @@ async fn main() -> anyhow::Result<()> {
     let socket = UdpSocket::bind("0.0.0.0:0").await?;
     let server = "stun.cloudflare.com:3478"
         .to_socket_addrs()?
-        .next()
+        .find(|addr| addr.is_ipv4())
         .context("Failed to resolve hostname")?;
     let mut binding = StunBinding::new(server);
     let mut timer = Timer::default();
