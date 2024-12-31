@@ -10,3 +10,7 @@ anyhow = "1"
 rand = "0.8.5"
 bytecodec = "0.4.15"
 futures = "0.3.30"
+tokio-util = { version = "0.7.13", features = ["full"] }
+tokio-stream = { version = "0.1.17", features = ["full"] }
+bytes = "1.9.0"
+futures-util = { version = "0.3.31", features = ["sink"] }
